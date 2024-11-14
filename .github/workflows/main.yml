@@ -50,6 +50,10 @@ jobs:
           dockerhub-user: ${{ secrets.REPO_USER }}
           dockerhub-password: ${{ secrets.REPO_PWD }}
           sarif-file: scout-report.sarif
+          summary: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          write-comment: true
+          command: quickview,cves # Specify the command here
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
